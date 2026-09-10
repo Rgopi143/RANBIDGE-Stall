@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('article');
       card.className = 'project-card';
       card.innerHTML = `
-        <div class="card-top-bar">
+        <div class="card-media">
+          <img src="${project.image}" alt="${project.title} cover photo" class="card-cover-img" loading="lazy">
           <span class="card-badge">${project.category}</span>
           <div class="card-qr-overlay" data-project-id="${project.id}" title="Scan or view enlarged QR code">
             <canvas id="qr-web-${project.id}"></canvas>
@@ -111,6 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
 
 
+        <div class="a3-card-pic">
+          <img src="${project.image}" alt="${project.title}" class="a3-cover-img">
+        </div>
+
         <div class="a3-card-title-box">
           <h3 class="a3-card-title">${project.title}</h3>
           <span class="a3-card-cat">${project.category}</span>
@@ -167,25 +172,29 @@ document.addEventListener('DOMContentLoaded', () => {
     renderA3PaperSheet(PROJECTS); // A3 sheet displays full 12 catalog projects
   }
 
-  // Mode Toggles
-  btnModeGallery.addEventListener('click', () => {
-    btnModeGallery.classList.add('active');
-    btnModeA3.classList.remove('active');
-    appContainer.classList.remove('a3-mode-active');
-  });
+  // Mode Toggles & Print (Optional)
+  if (btnModeGallery) {
+    btnModeGallery.addEventListener('click', () => {
+      btnModeGallery.classList.add('active');
+      if (btnModeA3) btnModeA3.classList.remove('active');
+      appContainer.classList.remove('a3-mode-active');
+    });
+  }
 
-  btnModeA3.addEventListener('click', () => {
-    btnModeA3.classList.add('active');
-    btnModeGallery.classList.remove('active');
-    appContainer.classList.add('a3-mode-active');
-  });
+  if (btnModeA3) {
+    btnModeA3.addEventListener('click', () => {
+      btnModeA3.classList.add('active');
+      if (btnModeGallery) btnModeGallery.classList.remove('active');
+      appContainer.classList.add('a3-mode-active');
+    });
+  }
 
-  // Print Action
-  btnPrint.addEventListener('click', () => {
-    // Enable A3 mode temporarily for print, then invoke print
-    appContainer.classList.add('a3-mode-active');
-    window.print();
-  });
+  if (btnPrint) {
+    btnPrint.addEventListener('click', () => {
+      appContainer.classList.add('a3-mode-active');
+      window.print();
+    });
+  }
 
   // Search input
   searchInput.addEventListener('input', (e) => {
