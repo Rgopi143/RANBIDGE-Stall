@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
-  --bg-dark: #090d16;
-  --bg-card: #111827;
-  --bg-card-border: #1f293d;
-  --bg-glass: rgba(17, 24, 39, 0.75);
+  --bg-dark: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-border: #e2e8f0;
+  --bg-glass: rgba(255, 255, 255, 0.9);
   
-  --accent-cyan: #06b6d4;
-  --accent-blue: #3b82f6;
-  --accent-indigo: #6366f1;
-  --accent-purple: #8b5cf6;
-  --accent-emerald: #10b981;
+  --accent-cyan: #0284c7;
+  --accent-blue: #2563eb;
+  --accent-indigo: #4f46e5;
+  --accent-purple: #7c3aed;
+  --accent-emerald: #059669;
   
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --text-dark: #111827;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-dark: #0f172a;
 
-  --shadow-glow: 0 0 25px rgba(6, 182, 212, 0.15);
+  --shadow-glow: 0 4px 20px rgba(37, 99, 235, 0.08);
   --radius-lg: 16px;
   --radius-md: 12px;
   --radius-sm: 8px;
@@ -26,6 +26,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Hide scrollbars across all browsers */
+html, body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 body {
@@ -45,7 +55,7 @@ body::before {
   left: -10vw;
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, rgba(255,255,255,0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -57,7 +67,7 @@ body::after {
   right: -10vw;
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.05) 0%, rgba(255,255,255,0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -72,10 +82,11 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(9, 13, 22, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--bg-card-border);
   padding: 1rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -97,7 +108,7 @@ body::after {
 .brand-icon {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -106,7 +117,7 @@ body::after {
   font-weight: 800;
   font-family: 'Outfit', sans-serif;
   font-size: 1.4rem;
-  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
 }
 
 .brand-text h1 {
@@ -114,7 +125,7 @@ body::after {
   font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  background: linear-gradient(90deg, #ffffff, #93c5fd);
+  background: linear-gradient(90deg, #0f172a, #2563eb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -134,10 +145,10 @@ body::after {
 /* Mode Switcher Buttons */
 .mode-toggle-group {
   display: flex;
-  background: #1e293b;
+  background: #f1f5f9;
   padding: 4px;
   border-radius: 9999px;
-  border: 1px solid var(--bg-card-border);
+  border: 1px solid #e2e8f0;
 }
 
 .mode-btn {
@@ -145,7 +156,7 @@ body::after {
   border-radius: 9999px;
   border: none;
   background: transparent;
-  color: var(--text-muted);
+  color: #64748b;
   font-weight: 600;
   font-size: 0.85rem;
   cursor: pointer;
@@ -203,17 +214,18 @@ body::after {
 .search-box input {
   width: 100%;
   padding: 0.65rem 1rem 0.65rem 2.5rem;
-  background: var(--bg-card);
-  border: 1px solid var(--bg-card-border);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
   border-radius: var(--radius-md);
-  color: white;
+  color: #0f172a;
   font-size: 0.9rem;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .search-box input:focus {
-  border-color: var(--accent-cyan);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .search-box svg {
@@ -229,16 +241,22 @@ body::after {
   gap: 0.5rem;
   overflow-x: auto;
   padding-bottom: 4px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.filter-pills::-webkit-scrollbar {
+  display: none;
 }
 
 .pill-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-card-border);
-  color: var(--text-muted);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
   padding: 0.4rem 0.9rem;
   border-radius: 9999px;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s;
@@ -265,9 +283,10 @@ body::after {
 }
 
 .project-card {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-card-border);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: var(--radius-lg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -277,21 +296,21 @@ body::after {
 
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(6, 182, 212, 0.4);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+  border-color: #93c5fd;
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.12);
 }
 
 .card-top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.25rem 0.25rem;
+  padding: 1.25rem 1.25rem 0.25rem;
 }
 
 .card-badge {
-  background: rgba(30, 41, 59, 0.85);
-  border: 1px solid var(--bg-card-border);
-  color: var(--accent-cyan);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
   padding: 0.25rem 0.65rem;
   border-radius: 9999px;
   font-size: 0.72rem;
@@ -301,16 +320,17 @@ body::after {
 }
 
 .card-qr-overlay {
-  background: white;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   padding: 4px;
   border-radius: var(--radius-sm);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: transform 0.2s;
 }
 
 .card-qr-overlay:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .card-qr-overlay canvas {
@@ -320,7 +340,7 @@ body::after {
 }
 
 .card-content {
-  padding: 1.25rem;
+  padding: 1rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -337,19 +357,19 @@ body::after {
   font-family: 'Outfit', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: white;
+  color: #0f172a;
   line-height: 1.3;
 }
 
 .card-subtitle {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: #64748b;
   margin-bottom: 0.75rem;
 }
 
 .card-description {
   font-size: 0.85rem;
-  color: #d1d5db;
+  color: #334155;
   margin-bottom: 1rem;
   line-height: 1.45;
   display: -webkit-box;
@@ -367,12 +387,13 @@ body::after {
 }
 
 .tag-pill {
-  background: #1f293d;
-  color: #94a3b8;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-sm);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .card-actions {
@@ -382,7 +403,7 @@ body::after {
 
 .btn-primary {
   flex: 1;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
   color: white;
   text-decoration: none;
   padding: 0.55rem 0.85rem;
@@ -395,16 +416,17 @@ body::after {
   justify-content: center;
   gap: 0.4rem;
   transition: opacity 0.2s;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 .btn-primary:hover {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .btn-icon {
-  background: #1e293b;
-  border: 1px solid var(--bg-card-border);
-  color: white;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #334155;
   padding: 0.55rem;
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -415,7 +437,7 @@ body::after {
 }
 
 .btn-icon:hover {
-  background: #334155;
+  background: #e2e8f0;
 }
 
 /* =========================================================
@@ -444,7 +466,8 @@ body::after {
   color: #0f172a;
   margin: 0 auto 3rem;
   padding: 12mm 14mm;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid #cbd5e1;
   border-radius: 4px;
   position: relative;
   display: flex;
@@ -517,8 +540,6 @@ body::after {
   position: relative;
   break-inside: avoid;
 }
-
-
 
 .a3-card-title-box {
   display: flex;
@@ -616,7 +637,7 @@ body::after {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;
@@ -634,13 +655,14 @@ body::after {
 }
 
 .modal-card {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-card-border);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 650px;
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   transform: scale(0.95);
   transition: transform 0.3s;
 }
@@ -651,7 +673,7 @@ body::after {
 
 .modal-header {
   padding: 1.25rem;
-  border-bottom: 1px solid var(--bg-card-border);
+  border-bottom: 1px solid #e2e8f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -661,12 +683,13 @@ body::after {
   font-family: 'Outfit', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
+  color: #0f172a;
 }
 
 .modal-close {
   background: transparent;
   border: none;
-  color: var(--text-muted);
+  color: #64748b;
   font-size: 1.5rem;
   cursor: pointer;
   line-height: 1;
@@ -682,10 +705,11 @@ body::after {
 }
 
 .modal-qr-container {
-  background: white;
+  background: #ffffff;
   padding: 1rem;
+  border: 1px solid #e2e8f0;
   border-radius: var(--radius-md);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 
 .modal-qr-container canvas {
@@ -696,8 +720,9 @@ body::after {
 .modal-url {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.9rem;
-  color: var(--accent-cyan);
-  background: #1e293b;
+  color: #1d4ed8;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   word-break: break-all;
